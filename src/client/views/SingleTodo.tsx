@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Item } from "../types";
 
 const SingleTodo = () => {
@@ -23,6 +23,9 @@ const SingleTodo = () => {
         ) : (
           <p className="text-warning">In progress!</p>
         )}
+        <div className="card-footer">
+          <Link className='btn btn-info' to={`/todo/${item.id}/edit`}>Edit me!</Link>
+        </div>
       </div>
     </div>
   );
